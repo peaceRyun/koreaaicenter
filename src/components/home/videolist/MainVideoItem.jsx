@@ -1,23 +1,19 @@
 import Image from 'next/image';
 import { IoDocumentTextOutline } from 'react-icons/io5';
 
-const MainVideoItem = () => {
+const MainVideoItem = ({ item }) => {
+    const { imgUrl, url, title } = item;
     return (
-        <article>
+        <article className='w-full h-full'>
             <a
-                href='https://www.youtube.com/watch?v=0b91fL3yD2Q'
-                className='block relative w-full h-full transition-background duration-1200 ease-in cursor-pointer overflow-hidden bg-[#1a1a1a] rounded-[20px] shadow-sm'
+                href={url}
+                className='block relative w-full h-full transition-colors duration-150 ease-in cursor-pointer overflow-hidden bg-[#1a1a1a] rounded-[20px] shadow-sm hover:bg-[#333333]'
             >
-                <Image
-                    src='/home/videoThumb/TestThumb1.avif'
-                    alt='block-ai-챗gpt-독주-종료-구글-발표-충격적-반격-veo2-신기능과-크레딧-사용-주의사항'
-                    width='400'
-                    height='400'
-                />
-                <div className='p-4'>
+                <Image src={imgUrl} alt={title} width='400' height='400' />
+                <div className='p-4 '>
                     <div className='flex items-start'>
                         <IoDocumentTextOutline className='text-4xl mr-3' />
-                        <h4>챗GPT 독주 종료 구글 발표 충격적 반격 Veo2 신기능과 크레딧 사용 주의사항</h4>
+                        <h4>{title}</h4>
                     </div>
                     <ul className='flex items-center'>
                         <li>
